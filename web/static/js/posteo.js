@@ -134,15 +134,24 @@ class Posteo{
       
       
     }
+    static async buscarPorCategoria(id){
+         const param = {"categoria": "" + id};
+         
+       try{
+            loading(true);
+        let posts = await Posteo.consultarPosts(param);
+            Posteo.mostrarPosts(posts);
+            Posteo.ocultarMenu();
+       } catch(err){
+           console.log(`Error: ${err}`);
+       }
+     loading(false);   
+    }
     
-  static async mostrarTodos(){
-               const param = {"postid":"" + 0};
+  static async mostrarPosts(posts){
+               
                let template ='';
-                loading(true);
-	      try{
-                  
-                  const posts = await Posteo.consultarPosts(param);
-               console.log(posts);
+  
 	     template = posts.length !== 0 ?  
 	        `<section class="main-post">
 	            <h2 class="titulo-main">Posts</h2>
@@ -182,12 +191,7 @@ class Posteo{
 	        		          </article>
 	        		          </section>`;		
 	      
-               }catch(error){
-                   loading(false);
-                  console.log(error);
-              } 
-                  
-	        loading(false);
+      
 	          document.querySelector('#panel-main').innerHTML = template;
 	     
 	        }
@@ -195,15 +199,12 @@ class Posteo{
              
 
 	 static  async mostrarBlogPost(id){
-                console.log('id>> ',id);
+                
                 const param = {"postid":"" + id};
 	    	const URL_POST_SERVER = 'api/PostServer?&q=';
                try{
                    loading(true);
                    const data = await Http.get(URL_POST_SERVER+JSON.stringify(param));
-	    	
-                            console.log(data);
-	    		//let cuerpo = JSON.parse(data.cuerpo);
 	    	    Posteo.renderBlog(data);
                     loading(false);
 	    
@@ -215,7 +216,7 @@ class Posteo{
 	    }
 	    
 	static renderBlog(datos){
-                  console.log(datos.titulo);
+              
 	        let options = {
 	            readOnly: true,
 	            scrollingContainer: '#scrolling-container'
@@ -244,6 +245,13 @@ class Posteo{
 	          let blog = new Quill('#blog', options);
 	          blog.setContents(JSON.parse(datos.cuerpo));
 	    }
-	    
+	
+    static ocultarMenu(){
+        if(document.querySelector('.boton-flotante').classList.contains("change")){
+           document.querySelector('.boton-flotante').classList.toggle("change");
+            document.querySelector('.sidenavpanel').style.width = "0";
+        }
+
+    }    
 }
-Posteo.mostrarTodos();
+Posteo.buscarPorCategoria(0);

@@ -24,9 +24,9 @@ public class PostDao {
     private final static String SQL_POSTS_SELECT = "SELECT * FROM post ORDER BY fecha_creacion DESC;";
     private final static String SQL_POST_SELECT = "SELECT * FROM post WHERE id = ?;";
     private final static String SQL_POST_INSERT = "INSERT INTO post (titulo, sub_titulo, cuerpo, fecha_creacion, categoria_id, autor_id)values(?,?,?,?,?,?);";
-    
-      private final static String SQL_CATEGORIA_SELECT = "SELECT * FROM categoria WHERE id = ?;";
-      private final static String SQL_AUTOR_SELECT = "SELECT * FROM autor WHERE id = ?;";
+    private final static String SQL_POSTS_SELECT_BY_CATEGORIA = "SELECT * FROM post WHERE categoria_id = ? ORDER BY fecha_creacion DESC;"; 
+    private final static String SQL_CATEGORIA_SELECT = "SELECT * FROM categoria WHERE id = ?;";
+    private final static String SQL_AUTOR_SELECT = "SELECT * FROM autor WHERE id = ?;";
     
     private PostDao() throws ClassNotFoundException,
     IOException, SQLException {
@@ -193,7 +193,83 @@ public class PostDao {
 		return posts;
     }
 
- 
+ public List<Post> buscarPorCategoria(Integer id) throws ClassNotFoundException, IOException, SQLException {
+     
+        ArrayList<Post> posts = new ArrayList();
+     
+		Connection conexion = null;
+		PreparedStatement ptsmt = null;
+		ResultSet rs = null;
+                PreparedStatement ptsmtCat = null;
+		ResultSet rsCat = null;
+                PreparedStatement ptsmtAutor = null;
+		ResultSet rsAutor = null;
+		try {
+			conexion = Conexion.getInstance().getConnection();
+			ptsmt = conexion.prepareStatement(SQL_POSTS_SELECT_BY_CATEGORIA);
+                        ptsmt.setInt(1, id);
+			rs = ptsmt.executeQuery();
+			Post post = null;
+                      
+			while (rs.next()) {
+			    try {
+			        post = new Post();
+			        post.setId(rs.getInt("id"));
+			        post.setTitulo(rs.getString("titulo"));
+			        post.setSubTitulo(rs.getString("sub_titulo"));
+			        post.setCuerpo(rs.getString("cuerpo"));
+                                post.setFechaCreacion(rs.getObject("fecha_creacion", LocalDateTime.class));
+                                Integer idCat = rs.getInt("categoria_id");
+                                Integer idAutor = rs.getInt("autor_id");
+                               
+			        ptsmtCat = conexion.prepareStatement(SQL_CATEGORIA_SELECT);
+                                ptsmtCat.setInt(1, idCat);
+                                rsCat = ptsmtCat.executeQuery();
+                                if(rsCat.next()){
+                                Categoria cat = new Categoria();
+                                cat.setId(rsCat.getInt("id"));
+                                cat.setNombre(rsCat.getString("nombre"));
+                                cat.setActiva(rsCat.getBoolean("is_activa"));
+                                cat.setImagen(rsCat.getString("imagen"));
+                                
+                                post.setCategoria(cat);
+                                }
+                               
+                                ptsmtAutor = conexion.prepareStatement(SQL_AUTOR_SELECT);
+                                ptsmtAutor.setInt(1, idAutor);
+                                rsAutor = ptsmtAutor.executeQuery();
+                                if(rsAutor.next()){
+                                    Autor a = new Autor();
+                                    a.setId(rsAutor.getInt("id"));
+                                    a.setNombre(rsAutor.getString("nombre"));
+                                    a.setEmail(rsAutor.getString("email"));
+                                    a.setPassword(rsAutor.getString("password"));
+                                    a.setIs_activo(rsAutor.getBoolean("is_activo"));
+                                    a.setAvatar(rsAutor.getString("avatar"));
+                                    
+                                    post.setAutor(a);
+                                } 
+                               
+			    } catch (Exception ex) {
+			        ex.printStackTrace();
+			    }
+			    posts.add(post);
+			}
+			} finally {
+			try {
+			    rs.close();
+			} finally {
+			    try {
+			        ptsmt.close();
+			    } finally {
+			        conexion.close();
+			    }
+			}
+			}
+		
+		return posts;
+    }
+
     public void insertar(Post post) throws ClassNotFoundException, IOException, SQLException {
         Connection c = null;
 		   PreparedStatement ptsmt = null;

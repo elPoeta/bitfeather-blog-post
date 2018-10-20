@@ -3,7 +3,7 @@ class Categoria{
         const URL_CATEGORIA_SERVER = 'api/CategoriaServer';
           try{
             const categorias = await Http.get(URL_CATEGORIA_SERVER);
-            console.log(categorias);
+           
             return categorias;
         }catch (err){
            console.log(`Error: ${err}`); 
@@ -14,9 +14,9 @@ class Categoria{
             const categorias = await Categoria.consultarCategorias();
             let template =
                        `<h3>Categorias\><span class="blink">_</span></h3>
-                            <a href="#">Todas</a>
+                            <a href="#" onclick="Posteo.buscarPorCategoria(0);">Todas</a>
                              ${categorias.map( categoria =>
-                           `<a href="#">${categoria.nombre}</a>`).join('')}`;
+                           `<a href="#" onclick="Posteo.buscarPorCategoria(${categoria.id});">${categoria.nombre}</a>`).join('')}`;
           
             document.querySelector('#panel-Sidenav').innerHTML = template;
   
