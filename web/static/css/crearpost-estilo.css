@@ -1,0 +1,125 @@
+.contenedorFieldsetCrearPost{
+    display: grid;
+    grid-template-columns:  1fr;  
+}
+
+.main-crear-post{
+    box-sizing : border-box;
+    max-width: 95%;
+    align-items : center;  
+    background : #FFE0AA;
+    color : #022037;
+    border : 1px solid #333;
+    margin : auto;
+    padding : 10px;
+    border-radius : 25px;
+}
+.header-crear-post{
+       display: grid;
+    grid-template-columns:  80px 1fr;  
+}
+.header-crear-post img{
+    width: 80px;
+}
+.titulo-main{
+    font-size: 2em;
+    color: #022037;
+    padding: 20px;
+}
+
+.fieldsetCrearPost{
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #022037;
+
+}
+
+.fieldsetCrearPost legend{
+    color: #FF9200;
+    background: #022037;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0;
+    width: 10em;
+    border: 2px solid #FF9200;
+    border-radius: 5px;
+}
+
+
+#form-crearPost label h3{
+    margin: 3px;
+    padding: 5px;
+}
+#form-crearPost input, #form-crearPost select, label{
+    padding: 5px;
+    font-size: .9em;  
+    width: 50%;
+}
+
+#editor{
+    background: #fff;
+    color: #000;
+    height: 500px;
+}
+
+#btn-publicar-post{
+    display: block;
+    margin: 10px 5px 5px 0;
+    position: relative;
+    left: 60%;
+    padding: 8px;
+    font-size: 1.1em;
+    border: 0;
+    border-radius: 90px;
+    background: #00561D;
+    color: #FFE0AA;
+    box-shadow: 3px 3px #888;
+    
+}
+#btn-publicar-post:hover{
+    background: #297C45;
+    cursor: pointer;
+}
+
+.ql-toolbar{
+    background: #fff;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .contenedorFieldsetCrearPost{ 
+       grid-template-columns:  repeat(2, 1fr);  
+}
+#btn-publicar-post{
+    left: 80%;
+}
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+        .contenedorFieldsetCrearPost{ 
+       grid-template-columns:  repeat(2, 1fr);  
+}
+
+.titulo-main{
+    font-size: 1.8em;
+  
+}
+#btn-publicar-post{
+    left: 80%;
+}
+}
+
+@media (min-width: 1281px) {
+        .contenedorFieldsetCrearPost{ 
+       grid-template-columns:  repeat(2, 1fr);  
+}
+.titulo-main{
+    font-size: 1.9em;
+  
+}
+
+#btn-publicar-post{
+    left: 85%;
+}
+}
+

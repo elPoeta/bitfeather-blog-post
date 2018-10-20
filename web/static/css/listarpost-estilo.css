@@ -1,0 +1,119 @@
+.main-post{
+    display: grid;
+    grid-template-columns: 1fr;
+    
+  
+}
+.article-post,
+.article-sin-post {
+    align-self: center;
+    box-sizing : border-box;
+    width: 100%;
+    align-items : center; 
+    background : #FFE0AA;
+    color : #022037;
+    border : 1px solid #333;
+    margin : auto;
+    padding : 10px;
+    border-radius : 25px;
+    transform: scale(0.95);
+    transition: box-shadow 0.5s, transform 0.5s;
+}
+.article-sin-post p{
+    text-align: center;
+}
+.article-post {
+    display:grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-areas:
+        "t t t t"
+        "t t t t"
+        "a a a a";
+    grid-gap:5px;
+
+  }
+  
+ 
+  .area-t-post{
+      grid-area: t;
+      
+  }
+ .area-a-post {
+      grid-area: a;
+      justify-items: center;
+      justify-content:center;
+      align-items: center;
+      display:grid;
+      grid-template-columns:  repeat(3, 100px);
+     
+      
+  }
+  .area-a-post img{
+      width: 30px;
+      margin: 0 auto;
+      
+  }
+
+  .area-a-post a{
+      color: #06c;
+      text-decoration: none;
+  }
+  .area-a-post p{
+      align-self: center;
+      font-weight: 500;
+      color: #06c;
+      
+  }
+  .titulo-main{
+      font-size: 2.3em;
+      font-weight: 900;
+  }
+  .titulo-post{
+      text-align: center;
+  }
+  .article-post h2 a{
+        font-size: .8em;
+        font-weight: 600;
+        color: #022037;
+        text-transform: capitalize;
+        text-decoration: none;
+        padding: 5px;
+    }
+    .article-post p{
+        font-size: 1em;
+        font-style: italic;
+        text-align: center;
+
+    }
+    .area-t-post a{
+         color: #022037;
+             text-decoration: none;
+    }
+    .article-post a:hover{
+        color: #FF9200;
+    }
+    .article-post:hover {
+        transform: scale(0.90);
+        box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.6);
+     }
+@media (min-width: 768px) and (max-width: 1024px) {
+    .article-post,
+    .article-sin-post {
+        width: 70%;
+    }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+     .article-post,
+    .article-sin-post {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1281px) {
+       .article-post,
+    .article-sin-post {
+        width: 40%;
+    }
+}

@@ -1,0 +1,287 @@
+.header{
+    display: grid;
+    grid-area: h;
+    background: #FF9200;
+    grid-template-columns: repeat(4, 1fr);
+    align-content: center;
+    position: sticky;
+    top : 0px;
+    z-index: 100;
+}
+
+.titulo{
+    display: grid;
+    grid-colum: 1 /1;
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: 30px 30px;
+    align-content: center;
+  
+}
+.logo-header{
+    max-height: 20px;
+    margin-top: 5px;
+
+}
+.titulo h1{
+    grid-row: 1 / 1;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.titulo h1 a{
+    text-decoration: none;
+    font-size: .5em;
+    color:#022037;
+}
+
+.titulo h1 a:hover,
+.login-user:hover{
+   color:#FFE0AA;
+}
+.blink{
+    animation: blinker 1s linear infinite;
+}
+.nav-bar{
+    display: none;
+}
+.busqueda{
+    display: grid;
+    grid-column: 3 / 5;
+     grid-row: 1 / 1;
+    grid-template-columns: 1fr 20px;
+     align-items: center;
+     
+}
+#buscar{
+    width: 80%;
+    background: inherit;
+    color: #022037;
+    border: none;
+    border-bottom: 1px solid #022037;
+}
+.fa-searchengin{
+    color: #022037;
+}
+.usuario{
+    display: grid;
+    grid-column: 5 /-1;
+    grid-row: 1 / 1;
+    grid-template-columns: 33px 1fr;
+    align-items: center;
+}
+.logo-user{
+    border-radius: 50%;
+    width: 30px;
+}
+.login-user{
+    margin-right: 10px;
+    text-decoration: none;
+    color: #022037;
+    font-weight: 700;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .titulo h1 a{
+    font-size: .7em;
+}
+.titulo h1{
+    margin-top: 10px;
+}
+.logo-header{
+    max-height: 22px;
+}
+  .nav-bar{
+    display: grid;
+    align-content: center;
+}
+
+.nav-bar ul{
+    list-style: none;
+}
+.nav-bar ul li a{
+    text-decoration: none;
+    color: #022037;
+    font-size: 1em;
+    font-weight: 700;
+}
+.nav-bar ul li a:hover{ 
+    cursor: pointer;
+    color: #FFE0AA;
+  
+ }
+ #buscar{
+    width: 75%;
+    border-bottom: 2px solid #022037;
+    padding: 5px;
+    font-size: 1em;
+}
+ .fa-searchengin{
+    font-size: 1.3em;
+}
+.login-user{
+    font-weight: 700;
+    font-size: 1.1em;
+}
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .header{
+      grid-template-columns: repeat(5, 1fr);
+}
+
+.titulo{
+    display: grid;
+    grid-colum: 1 /2;
+    grid-template-columns: 60px 1fr;
+    align-content: center;
+  
+}
+.logo-header{
+    grid-column:1 /1;
+    max-height: 45px;
+    align-self: center;
+    margin-left: 5px;
+
+}
+.titulo h1{
+    grid-column:2 /-1;
+    text-align: center;
+  
+}
+.titulo h1 a{
+    font-size: 1.1em;
+}
+
+.titulo h1 a:hover,
+.login-user:hover{
+   color:#FFE0AA;
+}
+.blink{
+    animation: blinker 1s linear infinite;
+}
+  .nav-bar{
+    display: grid;
+     grid-colum: 2 /3;
+    align-content: center;
+    justify-content: center;
+}
+
+.nav-bar ul{
+    list-style: none;
+}
+.nav-bar ul li a{
+    text-decoration: none;
+    color: #022037;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+.nav-bar ul li a:hover{ 
+    cursor: pointer;
+    color: #FFE0AA;
+  
+ }
+
+#buscar{
+    width: 75%;
+    border-bottom: 2px solid #022037;
+    font-size: 1.2em;
+    padding: 5px;
+}
+.fa-searchengin{
+    font-size: 1.3em;
+}
+.usuario{
+    grid-template-columns: 45px 1fr;
+}
+.logo-user{
+    border-radius: 50%;
+    width: 40px;
+}
+.login-user{
+    font-size: 1.4em;
+}
+
+}
+@media (min-width: 1281px) {
+     .header{
+      grid-template-columns: repeat(5, 1fr);
+}
+
+.titulo{
+    display: grid;
+    grid-colum: 1 /2;
+    grid-template-columns: 60px 1fr;
+    align-content: center;
+  
+}
+.logo-header{
+    grid-column:1 /1;
+    max-height: 55px;
+    align-self: center;
+    margin-left: 5px;
+
+}
+.titulo h1{
+    grid-column:2 /-1;
+    text-align: center;
+  
+}
+.titulo h1 a{
+    font-size: 1.5em;
+}
+
+.titulo h1 a:hover,
+.login-user:hover{
+   color:#FFE0AA;
+}
+.blink{
+    animation: blinker 1s linear infinite;
+}
+  .nav-bar{
+    display: grid;
+     grid-colum: 2 /3;
+    align-content: center;
+    justify-content: center;
+}
+
+.nav-bar ul{
+    list-style: none;
+}
+.nav-bar ul li a{
+    text-decoration: none;
+    color: #022037;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+.nav-bar ul li a:hover{ 
+    cursor: pointer;
+    color: #FFE0AA;
+  
+ }
+
+#buscar{
+    width: 70%;
+    border-bottom: 2px solid #022037;
+    font-size: 1.3em;
+    padding: 5px;
+}
+.fa-searchengin{
+    font-size: 1.5em;
+}
+.usuario{
+    grid-template-columns: 60px 1fr;
+}
+.logo-user{
+    border-radius: 50%;
+    width: 50px;
+}
+.login-user{
+    font-size: 1.5em;
+}
+
+}
+@keyframes blinker {
+    50% {
+          opacity: 0;
+         }
+       }

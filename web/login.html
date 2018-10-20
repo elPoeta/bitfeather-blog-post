@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:300,400,500,700,800,900" rel="stylesheet">
+        
+        <link rel="stylesheet" href="static/css/login-estilo.css">
+
+        <script src="static/js/http.js" defer></script>
+        <script src="static/js/mainloginpage.js" defer></script>
+        <script src="static/js/loginregistro.js" defer></script>
+  
+        <title>Login</title>
+    </head>
+    <body>
+
+ <header class="header">
+        <figure>
+            <a href="index.html"><img src="data:image/png;base64,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" alt="bitfeather" class="logo-header"></a>
+        </figure>
+
+        <h1 class="titulo-header"><a href="index.html">bitfeather\><span class="blink">_</span></a></h1>
+    </header>
+     <div id="panel-login-msg"></div> 
+<section class="login-section">  
+<div class="container">
+    <div class="backbox">
+      <div class="loginMsg">
+        <div class="textcontent">
+            <h2 class="title">bitfeather\><span class="blink">_</span></h2>  
+          <hr>
+          <p class="title">No tenes cuenta?</p>
+          <p>Registrate.</p>
+          <button id="switch1">CREAR CUENTA</button>
+        </div>
+      </div>
+      
+        <div class="signupMsg visibility">
+        <div class="textcontent">
+          <h2 class="title">bitfeather\><span class="blink">_</span></h2> 
+          <hr> 
+          <p class="title">Tenes cuenta?</p>
+          <p>Inicia sesion.</p>
+          <button id="switch2">INICIAR SESION</button>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="frontbox">
+      <div class="login-front">
+        <h2>LOGIN</h2>
+        <div class="inputbox">
+            <input type="email" id="log-email" name="email" placeholder="  EMAIL" required>
+            <input type="password"  id="log-pass" name="password" placeholder="  PASSWORD" required>
+        </div>
+        <button id="btn-login" onclick="LoginRegistro.iniciarSesion();">INICIAR</button>
+      </div>
+
+      <div class="signup hide">
+        <h2>CREAR CUENTA</h2>
+        <div class="inputbox"> 
+           <input type="text" id="sign-nombre" name="nombre" placeholder="  AUTOR" required>   
+         <input type="email" id="sign-email" name="email" placeholder="  EMAIL" required>
+          <input type="password" id="sign-pass" name="password" placeholder="  PASSWORD" required>
+          <input type="password" id="sign-confirm" name="conf-password" placeholder="  PASSWORD" required>
+        </div>
+        <button id="btn-registrar" onclick="LoginRegistro.crearCuenta();">CREAR</button>
+      </div>
+
+    </div>
+
+  </div>
+</section>   
+
+    </body>
+</html>
