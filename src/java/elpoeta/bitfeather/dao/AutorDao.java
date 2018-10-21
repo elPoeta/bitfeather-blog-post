@@ -22,6 +22,7 @@ public class AutorDao {
     private final static String SQL_AUTOR_FIND_BY_EMAIL_AND_NOMBRE = "SELECT * FROM autor WHERE email = ? OR nombre = ?;";
     private final static String SQL_AUTOR_FIND_BY_EMAIL = "SELECT * FROM autor WHERE email = ?;";
     private final static String SQL_AUTOR_INSERT = "INSERT INTO autor (nombre, email, password, avatar)values(?,?,?,?);";
+    private final static String SQL_AUTOR_UPDATE_AVATAR = "UPDATE autor SET autor.avatar = ? WHERE autor.id = ?;";
     
     private AutorDao() throws ClassNotFoundException,
     IOException, SQLException {
@@ -115,7 +116,7 @@ public class AutorDao {
 		ptsmt.setString(1, email);
                 ptsmt.setString(2, nombre);
 		rs = ptsmt.executeQuery();
-		System.out.println("!!!!!");
+		
 		if(rs.next()) {
 		    try {
                       autor = new Autor();
@@ -182,5 +183,23 @@ public class AutorDao {
 		}
 		return autor;
 
+    }
+     
+     public void updateAvatar(Integer id, String avatar) throws ClassNotFoundException, IOException, SQLException {
+         Connection c = null;
+		   PreparedStatement ptsmt = null;
+		   try {
+		       c = Conexion.getInstance().getConnection();
+		       ptsmt = c.prepareStatement(SQL_AUTOR_UPDATE_AVATAR);
+		       ptsmt.setString(1,  avatar);
+                       ptsmt.setInt(2, id);
+                       ptsmt.execute();
+		   } finally {
+		       try {
+		           ptsmt.close();
+		       } finally {
+		           c.close();
+		       }
+		   }
     }
 }

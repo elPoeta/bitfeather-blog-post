@@ -73,10 +73,12 @@ div.upload input {
     font-size: .8em;
 }
 
-#micuenta-avatar{
+#micuenta-avatar-img{
     height: 90px;
+    width: 90px;
     display: block;
     margin: 0 auto;
+    border-radius: 50%;
     
 }
 .subir-imagen{
@@ -166,9 +168,10 @@ div.upload input {
     font-size: 1em;
 }
 
-#micuenta-avatar{
+#micuenta-avatar-img{
     height: 140px;
-    
+    width: 140px;
+    border-radius: 50%;
     
 }
 }
@@ -221,11 +224,12 @@ div.upload input {
     font-size: 1em;
 }
 
-#micuenta-avatar{
+#micuenta-avatar-img{
     height: 140px;
+    width: 140px;
+    border-radius: 50%;
     
-    
-}  
+}
 }
 
 @media (min-width: 1281px) {
@@ -275,10 +279,12 @@ div.upload input {
     font-size: 1em;
 }
 
-#micuenta-avatar{
+#micuenta-avatar-img{
     height: 200px;
+    width: 200px;
+    border-radius: 50%;
     
-} 
+}
 
 
 .subir-imagen{

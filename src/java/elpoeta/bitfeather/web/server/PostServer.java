@@ -31,30 +31,31 @@ public class PostServer extends HttpServlet {
  
         try {
             TreeMap parametro = CONVERTIR.fromJson(request.getParameter("q"), TreeMap.class); 
-           
+           String resultado=null;
              if(parametro.containsKey("categoria")){
                 Integer id = Integer.parseInt( String.valueOf( parametro.get("categoria")));
        
                   if(id == 0){
                         List<Post> listado =  PostDao.getInstance().buscarTodos();
-                         String resultado = CONVERTIR.toJson(listado); 
-                         out.println("" + resultado);
+                         resultado = CONVERTIR.toJson(listado); 
+                        
                     }else{
                     
                       List<Post> listado =  PostDao.getInstance().buscarPorCategoria(id);
-                         String resultado = CONVERTIR.toJson(listado); 
-                         out.println("" + resultado);
+                         resultado = CONVERTIR.toJson(listado); 
+                        
                     }
                  }
                   else if(parametro.containsKey("postid")){
                        Integer id = Integer.parseInt( String.valueOf( parametro.get("postid")));
                         Post post = PostDao.getInstance().buscarPorId(id);
-                        String resultado = CONVERTIR.toJson(post); 
-                        out.println("" + resultado);
+                        resultado = CONVERTIR.toJson(post); 
+                        
                      }
                   else{
                  out.println("Error");
              }
+             out.println("" + resultado);
         } catch (ClassNotFoundException ex) {
             out.println("Verificar:" + ex.getMessage());
         } catch (SQLException ex) {
