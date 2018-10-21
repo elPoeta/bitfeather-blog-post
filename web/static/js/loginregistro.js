@@ -1,10 +1,10 @@
 class LoginRegistro{
     static async iniciarSesion(){
-        console.log('login');
+       
         let logEmail = document.querySelector('#log-email');
         let logPass = document.querySelector('#log-pass');
         const URL_LOGIN_SERVER = 'api/LoginServer';
-        
+     
         let loginUsuario ={};
         loginUsuario.email = logEmail.value;
          loginUsuario.password = logPass.value;
@@ -14,10 +14,11 @@ class LoginRegistro{
            
         const log = await Http.post(URL_LOGIN_SERVER,loginUsuario); 
          const data = await log.json();
-          console.log('log >>> ',data);
+       
            if(data !== null && data !== 'error'){
+              
               location.replace("index.html");
-               console.log('log >>> ',data);
+              
            }else{
                       LoginRegistro.msgLogueo("Error al iniciar sesion",'msg-color-error');
 

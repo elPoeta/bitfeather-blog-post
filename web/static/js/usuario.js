@@ -13,6 +13,8 @@ class Usuario{
                            login.setAttribute('id','logout-header');
                 }else{
                     document.querySelector('.login').innerText = 'Login';
+                    const urlHistory={"url":"index"};
+                    sessionStorage.setItem("history", JSON.stringify(urlHistory));
                 }
         })
                 .catch(err =>{

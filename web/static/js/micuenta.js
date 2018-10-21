@@ -31,6 +31,8 @@ class MiCuenta{
                     </section>`;
               
               }else{
+                   const urlHistory={"url":"miCuenta"};
+                   sessionStorage.setItem("history", JSON.stringify(urlHistory));
                    window.location.replace("login.html");
               }
             }catch (exception) {

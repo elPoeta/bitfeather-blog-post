@@ -17,9 +17,10 @@ class Posteo{
           const data = await Http.get(URL_CREAR_POST_SERVER_PRIVADO)
            
              if(data != 'error'){
-                
+              Posteo.loading(true);  
              const categorias = await Categoria.consultarCategorias();
-	    const  template = `
+	    
+           const  template = `
 	        <section class="main-crear-post">
                 <div class="header-crear-post">
                   <figure>
@@ -62,7 +63,7 @@ class Posteo{
 	        </section>`;
       
 	    document.querySelector('#panel-main').innerHTML = template;
-	
+	Posteo.loading(false);
       let selectCategoria = document.querySelector('#seleccionarCat-crearPost');
       selectCategoria.addEventListener('change', (e)=>{
          
@@ -74,11 +75,15 @@ class Posteo{
             
             }
               else{
+                  const urlHistory={"url":"crearPost"};
+                  sessionStorage.setItem("history", JSON.stringify(urlHistory));
                   window.location.replace("login.html");
               }
             
          } catch(error){
-               console.log(error);
+              const urlHistory={"url":"crearPost"};
+              sessionStorage.setItem("history", JSON.stringify(urlHistory)); 
+              console.log(error);
               window.location.replace("login.html");
           }
          
@@ -106,7 +111,8 @@ class Posteo{
           ];
 
           this.quill = new Quill('#editor', {
-            modules: {  
+            modules: { 
+              syntax:true,  
               toolbar: toolbarOptions,
               imageResize: {}
             },
@@ -138,7 +144,7 @@ class Posteo{
          const param = {"categoria": "" + id};
          
        try{
-            loading(true);
+            Posteo.loading(true);
             Posteo.ocultarMenu();
             let posts = await Posteo.consultarPosts(param);
         
@@ -147,7 +153,7 @@ class Posteo{
        } catch(err){
            console.log(`Error: ${err}`);
        }
-     loading(false);   
+      Posteo.loading(false);   
     }
     
   static async mostrarPosts(posts){
@@ -205,15 +211,15 @@ class Posteo{
                 const param = {"postid":"" + id};
 	    	const URL_POST_SERVER = 'api/PostServer?&q=';
                try{
-                   loading(true);
+                   Posteo.loading(true);
                    const data = await Http.get(URL_POST_SERVER+JSON.stringify(param));
 	    	    Posteo.renderBlog(data);
-                    loading(false);
+                    Posteo.loading(false);
 	    
                
                } catch (error){
                     console.log('error', error);
-                    loading(false);
+                    Posteo.loading(false);
                 }
 	    }
 	    
@@ -221,6 +227,7 @@ class Posteo{
               
 	        let options = {
 	            readOnly: true,
+                    modules: {syntax:true,toolbar: [['code-block']]},
 	            scrollingContainer: '#scrolling-container'
 	          };
 	          let template = 
@@ -261,5 +268,14 @@ class Posteo{
         }
 
     }    
+    
+    static loading(on) {
+    const loadingsvg = document.querySelector("#loading");
+  if (on) {
+      loadingsvg.style.display = "block";
+  } else {
+      loadingsvg.style.display = "none";
+  }
 }
-Posteo.buscarPorCategoria(0);
+}
+//Posteo.buscarPorCategoria(0);
