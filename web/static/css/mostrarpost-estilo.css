@@ -19,7 +19,19 @@
         grid-template-columns:1fr;
         justify-items: center;
     }    
+    .fa-star{
+        font-size: 1.5em;
+    }
+    .far.fa-star{
+        color:#06c;
+    } 
     
+    .fas.fa-star{
+        color:#FF9200;
+    }
+    .fa-star:hover {
+     transform: rotate(-15deg) scale(1.8);
+}
     .blog-post-user-img{
         width: 100px;
         border-radius: 50%;

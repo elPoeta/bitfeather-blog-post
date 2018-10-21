@@ -139,9 +139,11 @@ class Posteo{
          
        try{
             loading(true);
-        let posts = await Posteo.consultarPosts(param);
-            Posteo.mostrarPosts(posts);
             Posteo.ocultarMenu();
+            let posts = await Posteo.consultarPosts(param);
+        
+            Posteo.mostrarPosts(posts);
+           
        } catch(err){
            console.log(`Error: ${err}`);
        }
@@ -176,7 +178,7 @@ class Posteo{
                             <figure>
                               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAsCAYAAAAn4+taAAAABHNCSVQICAgIfAhkiAAABd5JREFUaEPtWVtonFUQnjm7rc29jZdqKe7ig6AttZpkFyy0UYhtrKAURSheHqw2lXp5yYOoVAVBvKB9qIpQiT6U2oK+NNZKrC1KyyZGWiT6VndtIL5YzbU22T3jd3a7f/799/y7yWZzxQ2B3X/mP2e+M/PNmTOHyfYJN21kUd8xU72InJTEaCtR37hV1zy8Ofows3QQ8TXC1E7x2Ae+uhCocHQ/xt0LfYH+Y9A/7K/fsIxDgTPM3CgkFyWZ2k79vb949dk2gJkIz5/PyrTWLfRHT5ffZByK9JiJHP2kqqT+s5et+msaKtXy4GhWBuPOS7x7Y4FFalGKvnXJ9+t47MWpAQlFPiTmPY5hpFsp3vONP5DoT/Beg6OvkivpQu+gVX/1hipVUTHiABH5VRLd63yBhBpbFQe+duRCB3QiBm/mfnw8EvkIbm+bBpBeALlrUv/KKoqf+8dq3PXrqlVV9fBcAfkYQHZPHUjkZ4TWnVMCct2mGlWdHJoEQr9JInb77HgkFP2EmJ4uGcgQ1dGlmGNsjpH10VpVS07YgfR9CK31MwcSjuxGfL3NxLVmMJDvBL4n8PUZNxBksWMIn4B3Qk36Jeg/in+HsDqV3KoCwRM24zSn7lMScMibBkJ0SDG/6dWHLRMi+kEvR5DpboXNLS77nmUORf8yadbl6i78vuAFokgdtxom8gr0HwGQO5yBk6n7VdBFUNeLOiXbVICdxJEGInwEmen1PCBAIaQfyANCchtC+V6XzX8zhyNXYMRyF/lOAm0fstZzjmECw9yZI2dG/YaQegjvbHD0GR4RH49IEoYFj7nm68P8XyKUX7UvlGduZC1hWY93tjhjEP1rgIzj4TLXwL9jIR5nFeiCcSvg3h6hiXZFy0/Z41g+15qQfvl97G/DeOewJu5WRJ/6eHAXZLcgPPaScBJh1a5YYBQ/YdVP6S0cUEcw7mp4T+NvJ36/hd/hSSAybkJrAqERdA+CFwbwvw+rNKaI7xHiHdBZZQdiiCWHYLxZ1aQS2Qz9PdCvsOmL0GUYcUAz/QhCBhXJDnh/p9/Y0L+EquEoxj+uhBqwsLuwaDfl2ktJKxBfgxeoAGBTBgjQ5GejBWqz1aylBiQCtzBC21CJt9HFmLtAm7pj1jZGwLTKvBeYBkDqG30Gym6MdRZ5YZmoNYqp07yX4xGQaBBV6MqpW56riew3mN1UcyQiB0Hmp6zEJzltnrtTqSsTFZTB1ubsnMYH4EhEwyM8YyCh6DC4Vp1n8JwAcZF9xkDC0SGk1Zr5AZLxSIYjMw6t+QSS9kjZQqsTO3uV1yMgYidCbruNI+DGuTRZSfJOiMVk5pTo4UhmH8l6hMPR7+3E1J8xqSfLKUMons8AIafgzI5fTOYBAp5f3RCzQHBex7hWc1Gd8r5yyjBnubLWkgFiyJ4bWv97pISwK2No5XuEwk0vWHmgVC9p7bR8cnRKlRH9eXUcWwlTWBbv+cKVtZYKRyw7++LkyBIFMoSKsm5xeSRTFnnKeBqWeKxWhSOv2ciO/tUptISayyuTuBkPfYGwd1xNRWTxng5sHemKOxeI0AhalzWFPIIa82VvoyJtgMg7yH9tftUvSoWtKEzX5i+CHIXshgLnkUrImrzvIW3/gOjZ7AKSbj5ka62ioeUPhN7D4G0wNq9oBMiDfkBwHvoKp6r6aQMROYs2692oC7Oh5QaSDS3/WqsAkHcBBG1Lzj/qziaQydAqFxCEFpEBMk2PEHphcm0JHjkDj2yyc4Rm4pF5B+LyiEP2iLVUR9Y6jazl9FvdBCxdJqbrb7JWyJK1Ergl67AfGzJPfche3CNzfR4xnZLpAxEZRdxVL6QNsTiQyIjhpblHmUy/ImMAUrW4gETHTLM8FwjuGLCzV8wGEGS05lKbcAVDKxw1nX1z9ZG+VshsiEJJ7OwrUKLYL1xmUKKAW+FSy5ACQAKwHRc8FMwBkqk0xNwT9hZahYUiw8I3gh/pNhM8nr6xGoDb/ZrMC8XugnbAAf3/AT3h4+ehQCRPAAAAAElFTkSuQmCC" alt="img-cal"/>
                             </figure>
-                          <a href="#">${post.categoria.nombre}</a>
+                          <a href="#"onclick="Posteo.buscarPorCategoria(${post.categoria.id});">${post.categoria.nombre}</a>
                           <a href="#">${post.autor.nombre}</a>
                           <p>${post.fechaCreacion.date.day}-${post.fechaCreacion.date.month}-${post.fechaCreacion.date.year}</p>
                       </div>
@@ -226,6 +228,7 @@ class Posteo{
                   <div class="blog-post-header">
                     <figure>
                             <img class="blog-post-categoria-img" src="${datos.categoria.imagen}"/>
+                            <i class="far fa-star" id="favorito" onclick="Posteo.agregarFavorito(${datos.id})"></i>
                             <p>${datos.fechaCreacion.date.day}-${datos.fechaCreacion.date.month}-${datos.fechaCreacion.date.year}</p>
                         </figure>
                            <figure class="blog-post-user">
@@ -245,7 +248,12 @@ class Posteo{
 	          let blog = new Quill('#blog', options);
 	          blog.setContents(JSON.parse(datos.cuerpo));
 	    }
-	
+	static agregarFavorito(post){
+            const estrella = document.querySelector('.fa-star');
+            console.log(estrella);
+            estrella.classList.remove('far');
+            estrella.classList.add('fas');
+        }
     static ocultarMenu(){
         if(document.querySelector('.boton-flotante').classList.contains("change")){
            document.querySelector('.boton-flotante').classList.toggle("change");

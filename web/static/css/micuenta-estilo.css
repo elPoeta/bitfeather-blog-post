@@ -1,0 +1,296 @@
+.micuenta-main{
+    box-sizing : border-box;
+    max-width: 95%;
+    align-items : center;  
+    background : #FFE0AA;
+    color : #022037;
+    border : 1px solid #333;
+    margin : auto;
+    padding : 10px;
+    border-radius : 25px;
+}
+.micuenta-main h2{
+    color: #06c;
+}
+.micuenta-avatar{
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.micuenta-menu{
+    list-style: none;
+}
+
+.micuenta-menu li {
+    display: inline-block;
+    padding: 5px;
+    font-size: .9em;
+}
+.micuenta-menu li:hover{
+    cursor: pointer;
+}
+.menu-activo{
+    color: #06c;
+    border-bottom: 2px solid #06c;
+}
+#panel-micuenta{
+    margin-top:15px;
+}
+
+div.upload {
+    width: 50px;
+    height: 50px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAyCAYAAAD1CDOyAAAABHNCSVQICAgIfAhkiAAAA5dJREFUaEPtmkloE1EYgP//JUZbFbe6oKUZxVPdamsnFi+CNxWXgyjiqYcquOGCJxWXo7hQd0Q8eFA86EHEk9CDIklaxQ0vQpNaCrUuIKWmbeb9/jlUbCfTmXmZF4kkEAi8f/ve/795/3sTBJ0fw5iEMPc+Qe8OSKUyulyhLsM5u8IwbwDgbiC4I9PxZl2+9EHUNO4SQtwdCVxKuR26kg90gOiBqF5lYlg8R8AJI0ET0QBZ2RXQ/epT0CDBQyxqmIZW6DUiLhwbLBF8pIF+E/o+9AcJEjgERs3HDLDRKUgGeUrp+AYep6BAgoWIxpoFwm234CTBSUjHz7rJeR0PDiJqNiFCG6+DiJtzXh+SUK6DVHubm6yX8WAgqusXYzicZIDpXpzmZAioj4aoAXqSn73qOMkVDpHb0GhOB6+DWr/BcEbekxUyofvlL7+6f8sXDCGM2E022KIcBNE9mU7sVNZnxcIgouZWgfiwkAByurwRtvBGeEvVjjqEsdpAoLdsYKqq8z8bIUCGS6sW0olOFVuKEEsiaEyO80KuU3GaT4chXlO60gRoy/q1qQZhNNYJwC2OzghDXKjHx47zRvcckZ456UmER9CZeFMcCDcvRt10ARN/2MSIzvEiPuam7ndcLRNuXhaYs8QE/GqHgPPckh91U/c7rgdifkOViIT78mTiAmfiiN8g3eT1QMxbOVtMinzJA3GRIQ67BeV3XA/E3OVzREVFrz0YeUmmkof8Bukmj2CsWjuukIUSQmKItyQ+I/OXQoMAVgasyCDIoQz0dAzY9J3KCaBVpuIHbfLVTTMhPLzcLVinceS2oaC+npXfUiq+YpQDvxDR2Hpu4Z+UIVRnIKfHmXjHmRhdCs5Pp8u8sA/Y/P3zTBB9oHRiaWmXkx8IouJmQlrWMvjc/l6p1JzL6QqX034lmzklw9zDPdv1sfqOT6eCIJzbjqvcduwrDQh+7ouw/Jand/ovIK5xJvaWRiZqls0QovJ7nt4p/8L2SlXUNeF8nighiKo1U8WU7M/AG8CiZoJfTfCd7DDfRYnRIHRKphKnvVaPTa7IECCisTN8zj4xEgifr7N8tV8P3R3vSgaCA0WoadzG91Kb+VeY75Zaoav9hTJA0Te7giIdR7nY5aSFowyhZVoVjJYzoTBpWlTKmdAyrQpGfWcCgP/GYCm9L1AIz5OKILEJEG2XbwXfO3nyrlmoDKF5gj2bL2fC81RpFvwNTKDszruo7c4AAAAASUVORK5CYII=);
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+div.upload:hover{
+    cursor: pointer;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAyCAYAAAD1CDOyAAAABHNCSVQICAgIfAhkiAAAA4JJREFUaEPtmUtoE1EUhv+baUK7KFarri24qo+WpgnoSnGn4mNRFBGpaZNWfOEDVypVl+KDqtU2LRVcKAq6EHEldKGLkqShLxQRuhAErbUgJU2bzFxPirbWyXRmbuZGI8kim3v+c853z7mP3DDI/DSOlcI98Qipyv24X5WUFYrJcjznNxi5B8ZaAN6LLl9AVix5EC2xg+D8wXzinO1D2PtYBogciKaIHwp7TQm7f0s6AZXVoMf7wWkQ5yFC0WVUgTi1UZUuWY63cJf50bFuykkQ5yGC0edg2GmYJOcvEa7fATDuFIizEMFIgCrQYyG5i+iqv2LBzpKJcxAtA5ugaX1UBY+FyBo0vg3dvj4LtqYmzkA0xdbCxSMEUGEa8ZcBxzjSmhe9/o+WNQaGuUNkDjTPRIz8V9tPho9gMuXHk83T9rULitwhQpFOWqQh4SQ4HtJCPyCsJ2FuEMHYXtpknuaSwJyW0ySEvWFRP+IQrfE1UNNDtBuViwaf13GeBPdUo7tmTMSXGETDqAcViX4CqBUJml1DB+T7KT/6tqbt+hSDCMZrwdJ7jA80plCjns8yTlcR/spQx5Rn6KwbzA+EWZTGeAU86qTejF+l2+w5M7ndcbFKmEU51F+JUuVrFrNrdFKfNZPbHZcDEYqupETGdclwXKft9IzdJM3s5UAcHlgFt/ZFD8FvIOw7bZaU3XE5EK2Dq6GlPmdZEzdpTZyym6SZPUNzZMuSRoqiQeWzYK4kmJqE5p6BK5WEWjYDZTpJPZ7Q6Y3aCWgn+5M6+6bRFWCJjWbJGo0zhKK53es5hqjPaxYFsAvRHNkOF3tRhBCdgZ+6YWqRxa1gvDvdoqqd0MX7+5Xgo7TjrC/wdrIBwZHnSqh8A3p8I0KtZthO/DZV7biQz4woGG2lO9ndP/XGu1MuEIbXDn6HzoljhQGR2feV6Yksh91/AMHRQbvT0cKoxJGh5VBnv2W5AGZf2Fap8romjH5PGO1O/yRE4F05Sqa+O34BzGsl2rgLn2IpgnAtBmFt6PJesjrxOru8QmSih6KX6fvCQiKcHgBYHV1RhgsHgh6TEBxooHep3eAoobfXdjo83wgD5P2wyynTJcR5bycZIEUIGbMq4rNYCZFZk6EpVkLGrIr4tF0JxgJQNaH/C0Tys6Rh2EV/J+ge33J/d7IUXa5REULu/Fr3XqyE9bmSa/kDsf7BPleTRCwAAAAASUVORK5CYII=);
+}
+div.upload input:hover{
+    cursor: pointer;
+}
+div.upload input {
+    display: block !important;
+    width: 50px !important;
+    height: 50px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+}
+
+#caja{
+    width: 150px;
+    height: 150px;    
+    border: 4px dashed #ccc;
+    padding: 2px;
+    margin: 0 auto;
+}
+
+#caja p {
+    text-align: center;
+    font-size: .8em;
+}
+
+#micuenta-avatar{
+    height: 90px;
+    display: block;
+    margin: 0 auto;
+    
+}
+.subir-imagen{
+    margin-top: 20px;
+}
+.cambia-pass{
+    margin-top: 20px;
+}
+.cambia-pass [type=password]{
+    padding: 5px;
+    margin: 10px;
+    width: 80%;
+    border-radius: 15px;
+    border: 2px solid #022037;
+    background: inherit;
+    color: #022037;
+    font-size: 1em;
+}
+.btn-contenedor{
+    margin-top: 10px;
+}
+.btn-micuenta{
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    color: #FF9200;
+    background-color: #022037;
+    
+}
+.btn-micuenta:hover{
+    background-color: #06c;
+}
+.micuenta-input-pass{
+    width: 95%;
+  
+    text-align: center;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .micuenta-main{
+    max-width: 90%;
+    align-items : stretch;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 50px auto;
+}
+    
+.micuenta-area-avatar{
+     grid-column: 1 / 4;
+      grid-row: 1 / -1;
+}
+.micuenta-area-menu{
+ grid-column: 4 / -1;
+}
+.micuenta-area-contenido{
+ grid-column: 4 / -1;
+    grid-row: 2 / -1;
+    
+}
+
+.micuenta-avatar{
+    width: 95%;
+}
+#panel-micuenta{
+    margin-top:1px;
+}
+.micuenta-menu li {
+    padding: 8px;
+    font-size: 1.1em;
+}
+.subir-imagen{
+    margin-top: 2px;
+}
+#caja{
+    width: 200px;
+    height: 200px;    
+    
+}
+
+#caja p {
+    
+    font-size: 1em;
+}
+
+#micuenta-avatar{
+    height: 140px;
+    
+    
+}
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .micuenta-main{
+    max-width: 80%;
+    align-items : stretch;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 50px auto;
+}
+    
+.micuenta-area-avatar{
+     grid-column: 1 / 3;
+      grid-row: 1 / -1;
+}
+.micuenta-area-menu{
+ grid-column: 3 / -1;
+}
+.micuenta-area-contenido{
+ grid-column: 3 / -1;
+    grid-row: 2 / -1;
+    
+}
+
+.micuenta-avatar{
+    width: 95%;
+}
+#panel-micuenta{
+    margin-top:1px;
+}
+.micuenta-menu li {
+    padding: 8px;
+    font-size: 1.1em;
+}
+.subir-imagen{
+    margin-top: 2px;
+}
+#caja{
+    width: 200px;
+    height: 200px;    
+    
+}
+
+#caja p {
+    
+    font-size: 1em;
+}
+
+#micuenta-avatar{
+    height: 140px;
+    
+    
+}  
+}
+
+@media (min-width: 1281px) {
+    .micuenta-main{
+    max-width: 80%;
+    align-items : stretch;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 50px auto;
+}
+    
+.micuenta-area-avatar{
+     grid-column: 1 / 3;
+      grid-row: 1 / -1;
+}
+.micuenta-area-menu{
+ grid-column: 3 / -1;
+}
+.micuenta-area-contenido{
+ grid-column: 3 / -1;
+    grid-row: 2 / -1;
+    
+}
+
+.micuenta-avatar{
+    width: 95%;
+}
+#panel-micuenta{
+    margin-top:1px;
+}
+.micuenta-menu li {
+    padding: 8px;
+    font-size: 1.1em;
+}
+.subir-imagen{
+    margin-top: 2px;
+}
+#caja{
+    width: 250px;
+    height: 250px;    
+    
+}
+
+#caja p {
+    
+    font-size: 1em;
+}
+
+#micuenta-avatar{
+    height: 200px;
+    
+} 
+
+
+.subir-imagen{
+    width: 80%;
+    margin: 0 auto;
+}
+.cambia-pass{
+    width: 80%;
+    margin: 0 auto;
+}
+.fieldsetCrearPost [type=password]{
+    width: 50%;
+   
+}
+}
