@@ -35,7 +35,7 @@ class Usuario{
         linkCuenta.appendChild(t);
         linkCuenta.className = "menu-usuario";
         linkCuenta.setAttribute('id', `miCuenta`);
-        linkCuenta.setAttribute("onclick", "MiCuenta.verMenu();");
+        linkCuenta.setAttribute("onclick", "MiCuenta.consultarCuenta();");
         liCuenta.appendChild(linkCuenta);
         t = document.createTextNode("Cerrar sesion"); 
     
@@ -51,7 +51,7 @@ class Usuario{
     
         div.appendChild(ul);
         
-        document.querySelector('.header').appendChild(div);
+        document.querySelector('.container').appendChild(div);
 }
      static cerrarSesion(){
         console.log("OUT!!!");

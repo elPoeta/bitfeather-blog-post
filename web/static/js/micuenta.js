@@ -37,6 +37,7 @@ class MiCuenta{
                    console.log(exception); 
               }
               document.querySelector('#panel-main').innerHTML = template;
+              MiCuenta.administrar();
 }
     static administrar(){
        const admin = document.querySelector('.micuenta-lista');
