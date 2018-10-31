@@ -2,6 +2,7 @@
 package elpoeta.bitfeather.web.server;
 
 import elpoeta.bitfeather.dao.PostDao;
+import elpoeta.bitfeather.modelo.Autor;
 import elpoeta.bitfeather.modelo.Post;
 import static elpoeta.bitfeather.util.GsonUtil.CONVERTIR;
 import java.io.IOException;

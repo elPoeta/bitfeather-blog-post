@@ -1,0 +1,206 @@
+.misposts-main{
+    box-sizing : border-box;
+    max-width: 95%;
+    align-items : stretch;  
+    background : #FFE0AA;
+    color : #022037;
+    border : 1px solid #333;
+    margin : auto;
+    padding : 10px;
+    border-radius : 25px;
+    /* align-items: flex-start;*/
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 150px auto;
+}
+
+    .mispost-area-avatar{
+     grid-column: 1 / 2;
+      grid-row: 1 / -1;
+}
+
+.misposts-area-contenido{
+   
+ grid-column: 1 / -1;
+    grid-row: 3 / -1; 
+}
+
+.misposts-avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+}
+
+
+.mispost-area-avatar{
+    color: #06c;
+}
+
+.flip-container{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap:10px;
+}
+
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box {
+  background-color: transparent;
+  height: 100px;
+  border: 1px solid #06c;
+  border-radius: 5px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side */
+.flip-box-front {
+  /*background-color: #FF9200;*/
+   background-color: inherit;
+  color: #022037;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: #022037;
+  color: #FF9200;
+  transform: rotateY(180deg);
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-back {
+  transform: rotateX(180deg);
+}
+
+.flip-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+.flip-container button {
+   border: 2px solid black;
+   border-radius: 5px;
+   background-color: inherit;
+   color: black;
+   padding: 14px 28px;
+   font-size: 16px;
+   cursor: pointer; 
+   border-color: #FF9200;
+   color: #FF9200;
+}
+.flip-container button:hover {
+    background: #ff9800;
+    color: white;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+ 
+     .misposts-main{
+    max-width: 90%;
+    align-items: flex-start;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 150px auto;
+}
+    .mispost-area-avatar{
+     grid-column: 1 / 2;
+      grid-row: 1 / -1;
+}
+   .flip-container{
+   grid-template-columns: 1fr 1fr;   
+    grid-colum: 2/-1;
+ 
+    
+}
+.misposts-area-contenido{
+   
+ grid-column: 2 / -1;
+    grid-row: 2 / -1; 
+}
+
+
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+     
+     .misposts-main{
+    max-width: 90%;
+    align-items: flex-start;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 150px auto;
+}
+    .mispost-area-avatar{
+     grid-column: 1 / 2;
+      grid-row: 1 / -1;
+}
+   .flip-container{
+    grid-template-columns: 1fr 1fr;  
+    grid-colum: 2/-1;
+ 
+    
+}
+.misposts-area-contenido{
+   
+ grid-column: 2 / -1;
+    grid-row: 2 / -1; 
+}
+
+}
+
+@media (min-width: 1281px){
+ 
+     .misposts-main{
+    max-width: 90%;
+    align-items: flex-start;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 150px auto;
+}
+    .mispost-area-avatar{
+     grid-column: 1 / 2;
+      grid-row: 1 / -1;
+}
+   .flip-container{
+     grid-template-columns: 1fr 1fr;   
+    grid-colum: 2/-1;
+   
+}
+
+.misposts-area-contenido{
+   
+ grid-column: 2 / -1;
+    grid-row: 2 / -1; 
+}
+    
+} 

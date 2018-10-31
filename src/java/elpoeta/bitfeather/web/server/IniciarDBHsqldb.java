@@ -30,7 +30,7 @@ public class IniciarDBHsqldb extends HttpServlet {
         System.out.println("Starting Database");
         HsqlProperties p = new HsqlProperties();
         p.setProperty("server.database.0", "file:~/BBDD/bitfeatherdb");
-        //p.setProperty("server.database.0", "file:resources/bitfeather");
+        //p.setProperty("server.database.0", "file:resources/bitfeatherdb");
         p.setProperty("server.dbname.0", "bitfeather_db");
         p.setProperty("server.port", "9001");
         p.setProperty("useUnicode", "true"); 

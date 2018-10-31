@@ -112,11 +112,20 @@ class MiCuenta{
         const URL_UPDATE_AVATAR_SERVER = 'api/privado/AutorUpdateAvatarServer';
         try{
         const updateAvatar = await Http.put(URL_UPDATE_AVATAR_SERVER, imagen);
-        console.log('avatar ',updateAvatar);
+        if(updateAvatar.status === 200){
+           
+            document.querySelector('.modal-content').style.display='inline-block';
+            AnimatedCheck.animated(); 
+        }
+        console.log('avatar ',updateAvatar.status);
     }catch(error){
         console.log(error);
     }
     }
+    
+    static cerrarModal(){
+    document.querySelector('.modal-content').style.display='none';
+}
     static removerActiveClass(){
         const removeActive = document.querySelectorAll('.micuenta-lista');
         for(let i=0; i<removeActive.length; i++){ 

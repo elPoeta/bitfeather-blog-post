@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class Conexion {
       private static Conexion INSTANCE = null;
      private static String LABASE = "jdbc:hsqldb:file:~/BBDD/bitfeatherdb/bitfeather_db";
-     //private static String LABASE = "jdbc:hsqldb:file:resources/bitfeather/bitfeather_db";
+     //private static String LABASE = "jdbc:hsqldb:file:resources/bitfeatherdb/bitfeather_db";
      private static String LABASEUSUARIO = "SA";
      private static String LABASECLAVE = "";
     

@@ -1,0 +1,28 @@
+.check-animado{
+    border: 2px solid rgba(0, 150, 0, 1);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.modal-content{
+    position: absolute;
+    top: 30%;
+    left:40%;
+    border: 1px solid #000;
+    display: none;
+    padding: 50px;
+    box-shadow: 6px 8px #ccc;
+    background-color: #fff;
+}
+.modal-content button{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    border-radius: 25px;
+    padding: 5px;
+}
+.contenedor-btn-canvas{
+    margin-top: 20px;
+}
+

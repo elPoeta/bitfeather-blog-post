@@ -227,7 +227,7 @@ class Posteo{
               
 	        let options = {
 	            readOnly: true,
-                    modules: {syntax:true,toolbar: [['code-block']]},
+                    modules: {syntax:true},
 	            scrollingContainer: '#scrolling-container'
 	          };
 	          let template = 
